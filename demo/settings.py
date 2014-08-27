@@ -12,31 +12,23 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4gmk@u8^r&qyanzz@ps8+twc1&z&&@4e6vz)%@8v9#bu75lz8$'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+SITE_ID = 1
 
-ALLOWED_HOSTS = []
+SECRET_KEY = 's9cxR0aq3H6ohz00ntcENFzRX45FzE4Y7wGl1QcNSxViwjsYQAXNhXJUZ7ORRdPjbk2TLsBU65njpx6M'
 
-
-# Application definition
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
+    'messages',
     'newsletters',
 
     'notification',
@@ -90,5 +82,5 @@ TEMPLATE_DIRS = [
 ]
 
 NOTIFICATION_BACKENDS = [
-    ("email", "notification.backends.email.EmailBackend"),
+    ("historical", "messages.backends.HistoricalMessagesBackend"),
 ]

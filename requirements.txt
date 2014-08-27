@@ -1,2 +1,3 @@
 https://github.com/django/django/archive/1.7c3.zip
 https://github.com/sherzberg/django-notification/archive/merged.zip
+jsonfield==0.9.22
